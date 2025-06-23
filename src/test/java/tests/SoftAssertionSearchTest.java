@@ -20,7 +20,7 @@ public class SoftAssertionSearchTest {
     }
 
     @Test
-    void SoftAssertionSearchTest() {
+    void softAssertionSearchTest() {
         open("/selenide/selenide/wiki");
         $(".markdown-body").shouldHave(text("Soft assertions")).shouldBe(visible);
         //open soft assertion
