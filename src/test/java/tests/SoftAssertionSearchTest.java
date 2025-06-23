@@ -13,14 +13,14 @@ import static com.codeborne.selenide.Selenide.open;
 public class SoftAssertionSearchTest {
 
     @BeforeAll
-    static void beforeAll() {
+    static void setUp() {
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://github.com/";
         Configuration.pageLoadStrategy = "eager";
     }
 
     @Test
-    void SoftAssertionSearch() {
+    void SoftAssertionSearchTest() {
         open("/selenide/selenide/wiki");
         $(".markdown-body").shouldHave(text("Soft assertions")).shouldBe(visible);
         //open soft assertion
