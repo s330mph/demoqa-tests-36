@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.DragAndDropOptions.to;
 import static com.codeborne.selenide.Selenide.*;
 
-public class actionsTest {
+public class ActionsTest {
     @Test
     void actionsWithOffsetTest(){
         open("https://the-internet.herokuapp.com/drag_and_drop");
