@@ -6,8 +6,7 @@ import tests.pages.components.ResultModal;
 import tests.pages.components.TableResponsive;
 
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormPage {
     private SelenideElement firstNameInput = $("#firstName"),
@@ -25,6 +24,11 @@ public class PracticeFormPage {
     TableResponsive tableResponsive = new TableResponsive();
     ResultModal resultModal = new ResultModal();
 
+    private PracticeFormPage removeBanners(){
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+        return this;
+    }
 
     public PracticeFormPage openPage(){
             open("/automation-practice-form");
@@ -61,6 +65,7 @@ public class PracticeFormPage {
     }
 
     public PracticeFormPage setDateOfBirth(String day, String month, String year) {
+        $("#dateOfBirthInput").clear();
         calendarInput.click();
         calendarComponent.setDate(day, month, year);
         return this;
