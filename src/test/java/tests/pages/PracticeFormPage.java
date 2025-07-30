@@ -24,16 +24,17 @@ public class PracticeFormPage {
     TableResponsive tableResponsive = new TableResponsive();
     ResultModal resultModal = new ResultModal();
 
-    private PracticeFormPage removeBanners(){
-        executeJavaScript("$('footer').remove();");
-        executeJavaScript("$('#fixedban').remove();");
-        return this;
-    }
 
     public PracticeFormPage openPage(){
             open("/automation-practice-form");
             return this;
         }
+
+    public PracticeFormPage removeBanners(){
+        executeJavaScript("$('footer').remove();");
+        executeJavaScript("$('#fixedban').remove();");
+        return this;
+    }
 
     public PracticeFormPage setFirstName(String value){
         firstNameInput.setValue(value);

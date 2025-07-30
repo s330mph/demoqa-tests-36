@@ -19,6 +19,7 @@ public class TestBoxTestsPageObjects extends TestBase {
     @Test
     void fillFormTest() {
         practiceFormPage.openPage()
+                .removeBanners()
                 .setFirstName("Ivan")
                 .setLasttName("Ivanov")
                 .setEmail("ivan@ivanov.com")
@@ -62,6 +63,7 @@ public class TestBoxTestsPageObjects extends TestBase {
     @Test
     void negativeFillFormTest() {
         practiceFormPage.openPage()
+                .removeBanners()
                 .setFirstName("Ivan")
                 .setLasttName("")
                 .setGender("Male")
